@@ -1,0 +1,21 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales o de backup
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Archivos generados por editores (VSCode, etc.)
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de sistema operativo
+desktop.ini
+
+# Archivos ocultos de macOS y Windows
+ehthumbs.db
