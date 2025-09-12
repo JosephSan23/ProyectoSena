@@ -1,0 +1,93 @@
+/* Definimos las variables que usaremos en el CSS */
+:root {
+    --primary: #063659;
+    /* Azul principal */
+    --dark: #1C2730;
+    /* Azul/negro oscuro */
+    --muted: #D9D9D9;
+    /* Gris claro */
+    --accent: #E8BB27;
+    /* Amarillo */
+    --white: #ffffff;
+
+    --radius: 8px;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #4c96cb;
+    padding: 8px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo a la izquierda */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 80px;
+    width: 90px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Menú + botón juntos */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Botón login */
+.btn-login {
+    background-color: #fff;
+    color: #4c96cb;
+    border: 2px solid #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #2a5d84;
+    color: #fff;
+    border-color: #2a5d84;
+}

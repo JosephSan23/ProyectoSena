@@ -39,14 +39,6 @@ section.login {
     width: 80px;
 }
 
-.user-photo {
-    width: 70px;
-    height: 70px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 auto 20px auto;
-}
-
 .form-title {
     text-align: center;
     font-size: 24px;
@@ -88,4 +80,21 @@ section.login {
 .form-group select:focus {
     outline: none;
     border-bottom: 2px solid var(--amarillo);
+}
+
+.login-button {
+    padding: 12px;
+    width: 100%;
+    background-color: var(--amarillo);
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d4ac0d;
 }
