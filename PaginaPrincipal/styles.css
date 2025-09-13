@@ -168,3 +168,71 @@ nav ul li a.active {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Apartado de beneficios */
+.beneficios {
+    padding: 30px 20px 80px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.beneficios h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.beneficios-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.beneficio {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3px;
+    transition: transform 0.3 ease, box-shadow 0.3 ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.beneficio img.icono {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 52px;
+    border-radius: 10px;
+    display: block;
+    padding: 8px;
+    background: rgba(76, 150, 203, 0.10);
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.beneficio h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.beneficio p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
