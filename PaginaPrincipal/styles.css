@@ -9,6 +9,8 @@
     --accent: #E8BB27;
     /* Amarillo */
     --white: #ffffff;
+    /*Color Azul claro */
+    --azulito: #2476b0;
 
     --radius: 8px;
     --max-width: 1200px;
@@ -22,7 +24,7 @@
 }
 
 header {
-    background-color: #4c96cb;
+    background-color: var(--azulito);
     padding: 8px 35px;
     display: flex;
     justify-content: space-between;
@@ -84,7 +86,7 @@ nav ul li a.active {
 /* Botón login */
 .btn-login {
     background-color: #fff;
-    color: #4c96cb;
+    color: var(--azulito);
     border: 2px solid #fff;
     padding: 8px 18px;
     border-radius: 8px;
@@ -132,7 +134,7 @@ nav ul li a.active {
 }
 
 .btn-primary {
-    background-color: #4c96cb;
+    background-color: var(--azulito);
     color: #fff;
     padding: 12px 24px;
     border-radius: var(--radius);
@@ -147,9 +149,9 @@ nav ul li a.active {
 
 .btn-secondary {
     background-color: transparent;
-    color: #4c96cb;
+    color: var(--azulito);
     padding: 12px 24px;
-    border: 2px solid #4c96cb;
+    border: 2px solid var(--azulito);
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -157,7 +159,7 @@ nav ul li a.active {
 }
 
 .btn-secondary:hover {
-    background-color: #4c96cb;
+    background-color: var(--azulito);
     color: #fff;
 }
 
@@ -197,7 +199,8 @@ nav ul li a.active {
     border-radius: 12px;
     padding: 15px 20px 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -235,4 +238,79 @@ nav ul li a.active {
     font-size: 0.95rem;
     color: #555;
     line-height: 1.5;
+}
+
+/* Media Queiries */
+
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+
+    /* Header */
+    .nav-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-login {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+
+    /* Beneficios */
+    .beneficio {
+        max-width: 100%;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 600px) {
+
+    /* Ajuste de tipografía */
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .beneficios h2 {
+        font-size: 1.5rem;
+    }
+
+    .beneficio h3 {
+        font-size: 1.1rem;
+    }
+
+    .beneficio p {
+        font-size: 0.9rem;
+    }
 }
