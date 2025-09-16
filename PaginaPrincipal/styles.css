@@ -240,6 +240,80 @@ nav ul li a.active {
     line-height: 1.5;
 }
 
+/* Apartado de confianza */
+.confianza {
+    background: #ffffff;
+    padding: 20px 20px;
+}
+
+.confianza-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 36px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.confianza-texto {
+    flex: 1;
+}
+
+.confianza h2 {
+    font-size: 1.9rem;
+    color: #1C2730;
+    margin-bottom: 12px;
+    line-height: 1.12;
+}
+
+.confianza .lead {
+    color: #4a5560;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.valores-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.valores-list li {
+    display: flex;
+    flex-direction: column;
+    background: #f7fbfe;
+    border-left: 4px solid var(--azulito);
+    padding: 12px 14px;
+    border-radius: var(--radius);
+}
+
+.valores-list li strong {
+    color: #123348;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+}
+
+.valores-list li span {
+    color: #55606a;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.confianza-media img {
+    margin: 20px auto 0;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(10, 20, 30, 0.06);
+}
+
 /* Media Queiries */
 
 
