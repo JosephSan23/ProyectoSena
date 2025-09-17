@@ -33,6 +33,10 @@ header {
     top: 0;
 }
 
+section {
+    scroll-margin-top: 96px;
+}
+
 /* Logo a la izquierda */
 .logo {
     display: flex;
@@ -317,7 +321,7 @@ nav ul li a.active {
 /* Planes */
 .planes {
     background: #f7fbfe;
-    padding: 80px 20px;
+    padding: 40px 20px;
     text-align: center;
     margin-top: 60px;
 }
