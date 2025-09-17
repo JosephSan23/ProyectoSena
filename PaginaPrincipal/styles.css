@@ -395,6 +395,93 @@ nav ul li a.active {
 
 .btn-adquirir:hover {
     background: #3b7aa5;
+
+}
+
+.contacto {
+    background: #f8f9fa;
+    padding: 60px 20px;
+}
+
+.contacto-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto .lead {
+    font-size: 1.05rem;
+    color: #4a5560;
+    margin-bottom: 30px;
+}
+
+.contacto-formulario {
+    text-align: left;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.btn-enviar {
+    background: #4c96cb;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3 ease;
+}
+
+.btn-enviar:hover {
+    background: #3b7aa5;
+}
+
+.contacto-whatsapp {
+    margin-top: 25px;
+}
+
+.contacto-whatsapp p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.icono-whatsapp img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.icono-whatsapp img:hover {
+    transform: scale(1.1);
 }
 
 /* Media Queiries */
