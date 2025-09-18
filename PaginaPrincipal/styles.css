@@ -87,23 +87,57 @@ nav ul li a.active {
     border-bottom: 2px solid #fff;
 }
 
-/* Botón login */
-.btn-login {
-    background-color: #fff;
-    color: var(--azulito);
-    border: 2px solid #fff;
+/* Botón login y registro */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.separator {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.boton {
     padding: 8px 18px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
+    text-decoration: none;
+    /* si usas <a> */
 }
 
-.btn-login:hover {
+/* Botón primario → Iniciar sesion */
+.boton-primario {
+    background-color: #2a5d84;
+    color: #fff;
+    border: 2px solid #2a5d84;
+}
+
+.boton-primario:hover {
+    background-color: #fff;
+    color: var(--azulito);
+    border-color: #fff;
+}
+
+/* Botón secundario → Registrarse */
+.boton-secundario {
+    background-color: #fff;
+    color: var(--azulito);
+    border: 2px solid #fff;
+}
+
+.boton-secundario:hover {
     background-color: #2a5d84;
     color: #fff;
     border-color: #2a5d84;
 }
+
+
 
 
 /* Estilos para el Hero */
