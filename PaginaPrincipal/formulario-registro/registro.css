@@ -1,0 +1,175 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background: url('../assets/Fondo-Optimal.png') no-repeat center center/cover; */
+    background: linear-gradient(135deg, var(--primary), var(--azulito));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.inicio-sesion,
+.registro {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+    min-height: auto;
+}
+
+.titulo-formulario {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.formulario-registro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.4rem;
+}
+
+.grupo-campo label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.grupo-campo input {
+    padding: 0.4rem 0.6rem;
+    height: 38px;
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 6px rgba(232, 187, 39, 0.5);
+}
+
+.grupo-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.boton-enviar {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background: var(--azulito);
+    transform: scale(1.03);
+}
+
+.texto-alternativo,
+.texto.registro,
+.texto-login {
+    text-align: center;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.texto-alternativo a,
+.texto-login a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.texto.registro a:hover,
+.texto-login a:hover {
+    color: var(--azulito);
+}
+
+.formulario-registro .opciones-sociales {
+    grid-column: span 2;
+    /* ocupa las 2 columnas del grid */
+    display: flex;
+    flex-direction: column;
+    /* texto arriba, íconos abajo */
+    align-items: center;
+    /* centra horizontalmente */
+    margin-top: 1.5rem;
+}
+
+.formulario-registro .opciones-sociales .iconos {
+    display: flex;
+    gap: 1rem;
+    /* espacio entre íconos */
+    margin-top: 0.5rem;
+}
+
+.opciones-sociales p {
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.opciones-sociales .iconos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* espacio entre íconos */
+}
+
+.opciones-sociales .icono-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--muted);
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.opciones-sociales .icono-social:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.opciones-sociales .icono-social img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.formulario-registro .grupo-campo:nth-child(3),
+.formulario-registro .grupo-campo:nth-child(4),
+.formulario-registro .grupo-campo:nth-child(5),
+.formulario-registro .grupo-check,
+.formulario-registro .boton-enviar,
+.formulario-registro .texto-login {
+    grid-column: span 2;
+    /* ocupan las 2 columnas */
+}

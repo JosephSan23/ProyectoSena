@@ -97,18 +97,34 @@ body {
 .opciones-sociales {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+}
+
+.icono-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--muted);
+    border-radius: 50%;
+    /* 👈 esto hace que se vea redondo */
+    background: var(--white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    /* separación horizontal */
+}
+
+.icono-social:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
 .icono-social img {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.2s;
-}
-
-.icono-social img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 2px var(--azulito));
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
 }
 
 .texto-registro {
