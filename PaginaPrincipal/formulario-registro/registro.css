@@ -115,14 +115,15 @@ body {
     /* texto arriba, íconos abajo */
     align-items: center;
     /* centra horizontalmente */
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
+    gap: 0.01rem;
 }
 
 .formulario-registro .opciones-sociales .iconos {
     display: flex;
     gap: 1rem;
     /* espacio entre íconos */
-    margin-top: 0.5rem;
+    align-items: center;
 }
 
 .opciones-sociales p {
