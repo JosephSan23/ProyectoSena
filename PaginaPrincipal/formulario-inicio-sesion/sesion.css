@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background: url('../assets/Fondo-Optimal.png') no-repeat center center/cover; */
+    /* background: linear-gradient(135deg, #002B5B, #1A73E8); */
+    background: linear-gradient(135deg, #063659, #2476b0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.log-page {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.titulo-formulario {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+.grupo-campo {
+    margin-bottom: 1rem;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.grupo-campo input:focus {
+    border: 2px solid var(--accent);
+    outline: none;
+    box-shadow: 0 0 6px rgba(232, 187, 39, 0.5);
+}
+
+.grupo-enlace {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.grupo-enlace a {
+    color: var(--azulito);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.grupo-enlace a:hover {
+    color: #E8BB27;
+    text-decoration: underline;
+}
+
+.boton-enviar {
+    background-color: var(--azulito);
+    font-family: Tahoma;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background: #063659;
+}
+
+.texto-alternativo {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
+    color: #40474d;
+}
+
+.opciones-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icono-social img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s;
+}
+
+.icono-social img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 2px var(--azulito));
+}
+
+@media (max-width: 480px) {
+    .log-page {
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .titulo-formulario {
+        font-size: 1.2rem;
+    }
+
+    .boton-enviar {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
