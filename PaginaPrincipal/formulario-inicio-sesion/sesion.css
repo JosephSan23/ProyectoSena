@@ -111,6 +111,24 @@ body {
     filter: drop-shadow(0 0 2px var(--azulito));
 }
 
+.texto-registro {
+    margin-top: 1rem;
+    color: var(--dark);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.texto-registro a {
+    color: var(--azulito);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.texto-registro a:hover {
+    color: var(--principal);
+}
+
 @media (max-width: 480px) {
     .log-page {
         padding: 1.5rem;
