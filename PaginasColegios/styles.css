@@ -2,7 +2,7 @@
     --rojo: #dc2626;
     --rojo-oscuro: #7f1d1d;
     --dorado: #f59e0b;
-    --beige: #fef3c7;
+    --beige: #fffdf4;
     --gris-texto: #374151;
     --fondo-claro: #fff7ed;
 
@@ -129,5 +129,54 @@
 .texto {
     font-size: 1rem;
     line-height: 1.6rem;
+    color: var(--gris-texto);
+}
+
+.oferta-academica {
+    padding: 60px 20px;
+    background-color: var(--beige);
+}
+
+.oferta-titulo {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--rojo-oscuro);
+    text-align: center;
+}
+
+.oferta-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.oferta-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.oferta-card:hover {
+    transform: translateY(-8px);
+}
+
+.oferta-imagen {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.oferta-card-titulo {
+    font-size: 1.3rem;
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+.oferta-descripcion {
+    font-size: 1rem;
     color: var(--gris-texto);
 }
