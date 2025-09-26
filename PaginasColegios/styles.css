@@ -180,3 +180,47 @@
     font-size: 1rem;
     color: var(--gris-texto);
 }
+
+/* Inscripcion */
+.seccion-inscripcion {
+    background-color: #f7f9fc;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 50px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inscripcion-titulo {
+    font-size: 2rem;
+    color: var(--rojo-oscuro);
+    margin-bottom: 15px;
+}
+
+.inscripcion-texto {
+    font-size: 1.1rem;
+    color: var(--gris-texto);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.btn-inscribirse {
+    display: inline-block;
+    background-color: var(--rojo);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-inscribirse:hover {
+    background-color: var(--rojo-oscuro);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
