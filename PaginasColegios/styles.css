@@ -93,3 +93,41 @@
     border-radius: 12px;
     box-shadow: var(--sombra);
 }
+
+/* Apartado sobre-nosotros */
+.sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.columna {
+    flex: 1;
+}
+
+.caja {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.caja:hover {
+    transform: translateY(-5px);
+}
+
+.titulo-seccion {
+    font-size: 1.6rem;
+    color: var(--rojo-oscuro);
+    margin-bottom: 15px;
+}
+
+.texto {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--gris-texto);
+}
