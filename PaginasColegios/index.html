@@ -93,8 +93,41 @@
 
     <a href="#modal-inscripcion" class="btn-inscribirse">Inscribirse ahora</a>
 
-
 </section>
+<!-- Modal -->
+<div id="modal-inscripcion" class="modal">
+    <div class="modal-contenido">
+        <a href="#" class="modal-cerrar">&times;</a>
+        <h2>Formulario de Inscripción</h2>
+
+        <form class="formulario-modal">
+            <!-- estudiante -->
+            <label for="nombres-postulante">Nombres del niño(a)/joven</label>
+            <input type="text" id="nombres-postulante" name="nombres-postulante" required>
+
+            <label for="apellidos-postulante">Apellidos del niño(a)/joven</label>
+            <input type="text" id="apellidos-postulante" name="apellidos-postulante" required>
+
+            <label for="documento-postulante">Documento del niño(a)/joven</label>
+            <input type="text" id="documento-postulante" name="documento-postulante" required>
+
+            <!-- Acudiente -->
+            <label for="nombres-acudiente">Nombres del acudiente</label>
+            <input type="text" id="nombre-acudiente" name="nombre-acudiente" required>
+
+            <label for="apellidos-acudiente">Apellidos del acudiente</label>
+            <input type="text" id="apellidos-acudiente" name="apellidos-acudiente" required>
+
+            <label for="correo-acudiente">Correo del acudiente</label>
+            <input type="email" id="correo-acudiente" name="correo-acudiente" required>
+
+            <label for="telefono-acudiente">Teléfono</label>
+            <input type="tel" id="telefono-acudiente" name="telefono-acudiente" required>
+
+            <button type="submit" class="btn-enviar">Enviar inscripción</button>
+        </form>
+    </div>
+</div>
 
 <body>
 
