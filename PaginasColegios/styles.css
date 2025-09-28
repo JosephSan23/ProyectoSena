@@ -20,7 +20,7 @@
 .encabezado {
     background-color: var(--rojo);
     color: var(--blanco);
-    padding: 12px 28px;
+    padding: 8px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,6 +37,12 @@
 .logo img {
     height: 80px;
     width: 100px;
+}
+
+.menu-derecha {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .navegacion ul {
@@ -57,6 +63,24 @@
 .navegacion a:hover,
 .navegacion a:active {
     color: var(--dorado);
+}
+
+.btn-login {
+    background-color: var(--rojo-oscuro);
+    color: white;
+    padding: 8px 12px;
+    border: 2px solid var(--rojo-oscuro);
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--gris-texto);
+    border-color: var(--gris-texto);
+    transform: scale(1.05);
 }
 
 /*Hero de la pagina*/
