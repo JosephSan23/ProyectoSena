@@ -17,6 +17,10 @@
     ;
 }
 
+section {
+    scroll-margin-top: 150px;
+}
+
 .encabezado {
     background-color: var(--rojo);
     color: var(--blanco);
