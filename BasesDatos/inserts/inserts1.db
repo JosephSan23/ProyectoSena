@@ -33,3 +33,60 @@ VALUES
 
 
 -- Cursos y asignaturas
+INSERT INTO Curso (nombre_curso, grado)
+VALUES
+('5A', 'Quinto'),
+('6A', 'Sexto');
+
+INSERT INTO Asignatura (nombre_asignatura)
+VALUES
+('Matemáticas'),
+('Lengua Castellana'),
+('Ciencias Naturales');
+
+INSERT INTO Curso_Asignatura (id_curso, id_asignatura)
+VALUES
+(1, 1),
+(1, 2),
+(2, 3);
+
+INSERT INTO Profesor_Curso_Asignatura (id_profesor, id_curso, id_asignatura)
+VALUES
+(2, 1, 1), -- Carlos enseña Matemáticas en 5A
+(3, 1, 2); -- Diana enseña Lengua Castellana en 5A
+
+
+-- Matriculas
+INSERT INTO Matricula (id_estudiante, id_curso, fecha_matricula, anio_lectivo)
+VALUES
+(4, 1, '2024-01-15', 2024),
+(5, 1, '2024-01-15', 2024);
+
+-- Calificaciones
+INSERT INTO Calificacion (id_estudiante, id_asignatura, periodo, nota)
+VALUES
+(4, 1, 'Primer Periodo', 4.5),
+(4, 2, 'Primer Periodo', 4.0),
+(5, 1, 'Primer Periodo', 3.8),
+(5, 2, 'Primer Periodo', 4.2);
+
+-- Asistencia
+INSERT INTO Asistencia (id_estudiante, fecha, estado)
+VALUES
+(4, '2024-04-01', 'asistio'),
+(4, '2024-04-02', 'falta'),
+(5, '2024-04-01', 'asistio'),
+(5, '2024-04-02', 'asistio');
+
+-- Postulante
+INSERT INTO Postulante (
+    nombres_postulante, apellidos_postulante, tipo_documento_postulante, documento_postulante,
+    fecha_nacimiento_postulante, direccion_postulante,
+    nombres_acudiente, apellidos_acudiente, tipo_documento_acudiente, documento_acudiente,
+    correo_acudiente, telefono_acudiente, direccion_acudiente,
+    estado_postulacion, id_administrador
+)
+VALUES
+('Samuel', 'Ruiz Torres', 'TI', '1150001001', '2013-05-20', 'Cl 9 #7-11',
+ 'Lucía', 'Torres Rincón', 'CC', '1020008008', 'lucia.torres@gmail.com', '3204456677', 'Cl 9 #7-11',
+ 'pendiente', 1);
