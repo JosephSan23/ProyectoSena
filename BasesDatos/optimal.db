@@ -1,6 +1,5 @@
--- Creacion de las tablas de optimal
--- Tabla principal de usuarios
-
+create database optimal_school;
+use optimal_school;
 CREATE TABLE Usuario (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     rol ENUM('administrador', 'profesor', 'estudiante', 'acudiente') NOT NULL,
