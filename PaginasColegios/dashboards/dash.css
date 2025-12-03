@@ -57,9 +57,10 @@ body {
     color: white;
     padding: 20px;
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;
     bottom: 0;
+    overflow-y: auto;
 }
 
 .dash-sidebar ul {
