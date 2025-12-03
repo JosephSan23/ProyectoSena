@@ -11,7 +11,9 @@
     --white: #ffffff;
     /*Color Azul claro */
     --azulito: #2476b0;
-
+    --gris: #334751d1;
+    --azul: #085a7c;
+    --combi: linear-gradient(to right, #334751d1, #085a7c);
     --radius: 8px;
     --max-width: 1200px;
 }
@@ -20,12 +22,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
 }
 
 header {
-    background: linear-gradient(to bottom, #6a6262, #004a6f);
-    padding: 8px 35px;
+    background: var(--combi);
+    padding: 18px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,7 +148,7 @@ nav ul li a.active {
     align-items: center;
     justify-content: space-between;
     padding: 60px 80px;
-    background-color: #f8f9fa;
+    background: var(--combi);
 }
 
 .hero-content {
@@ -155,13 +157,13 @@ nav ul li a.active {
 
 .hero-content h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: #f3f0f0;
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 1.1rem;
-    color: #555;
+    color: #fdfcfc;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -171,34 +173,21 @@ nav ul li a.active {
     gap: 15px;
 }
 
-.btn-primary {
-    background-color: var(--azulito);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3 ease;
-}
-
-.btn-primary:hover {
-    background-color: #2a5d84;
-}
-
 .btn-secondary {
     background-color: transparent;
-    color: var(--azulito);
+    color: #fff;
     padding: 12px 24px;
-    border: 2px solid var(--azulito);
+    border: 2px solid #1c2730;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background-color: var(--azulito);
+    background-color: var(--azul);
     color: #fff;
+
 }
 
 .hero img {
