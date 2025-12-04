@@ -47,19 +47,20 @@ nav ul {
 }
 
 nav a {
-    color: #817878;
+    color: #424b54;
     text-decoration: none;
     font-size: 1rem;
     transition: 0.3s ease;
 }
 
 nav a:hover {
+    color: #3f4245;
     text-decoration: overline;
 }
 
 .auth-buttons a {
     padding: 10px;
-    background: #063659;
+    background: #727679;
     color: white;
     border-radius: 6px;
     font-weight: bold;
@@ -67,6 +68,11 @@ nav a:hover {
 }
 
 .auth-buttons a:hover {
-    background: #fff;
+    background: #3f4245;
     transition: 0.3s ease;
+}
+
+.auth-buttons a i {
+    margin-right: 8px;
+    font-size: 1rem;
 }
