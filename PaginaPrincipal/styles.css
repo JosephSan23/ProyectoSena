@@ -13,7 +13,7 @@
     --azulito: #2476b0;
     --gris: #334751d1;
     --azul: #085a7c;
-    --combi: linear-gradient(to right, #334751d1, #085a7c);
+    --combi: linear-gradient(to right, #085A7C, #ccd1d4);
     --radius: 8px;
     --max-width: 1200px;
 }
@@ -26,7 +26,7 @@
 }
 
 header {
-    background: var(--combi);
+    background: linear-gradient(176deg, #0D47A1, #1A73E8);
     padding: 18px 35px;
     display: flex;
     justify-content: space-between;
@@ -47,8 +47,8 @@ section {
 }
 
 .logo img {
-    height: 40px;
-    width: 120px;
+    height: 42px;
+    width: 130px;
 }
 
 .logo h1 {
@@ -148,7 +148,7 @@ nav ul li a.active {
     align-items: center;
     justify-content: space-between;
     padding: 60px 80px;
-    background: var(--combi);
+    background: linear-gradient(to right, #fff, #fff);
 }
 
 .hero-content {
@@ -185,7 +185,7 @@ nav ul li a.active {
 }
 
 .btn-secondary:hover {
-    background-color: var(--azul);
+    background-color: #655f5f;
     color: #fff;
 
 }
