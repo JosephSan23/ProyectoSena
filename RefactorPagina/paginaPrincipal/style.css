@@ -4,13 +4,17 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins';
+}
+
 header {
     width: 100%;
     padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(150deg, #ffffff, #e7f5f9);
+    background: linear-gradient(150deg, #0a537f, #88daf1);
     border-bottom: 1px solid #c5c7cb;
     position: sticky;
     top: 0;
@@ -47,20 +51,20 @@ nav ul {
 }
 
 nav a {
-    color: #424b54;
+    color: #fff;
     text-decoration: none;
     font-size: 1rem;
     transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: #3f4245;
+    color: #fff;
     text-decoration: overline;
 }
 
 .auth-buttons a {
     padding: 10px;
-    background: #727679;
+    background: #56bee1;
     color: white;
     border-radius: 6px;
     font-weight: bold;
@@ -68,7 +72,7 @@ nav a:hover {
 }
 
 .auth-buttons a:hover {
-    background: #3f4245;
+    background: #0f77b7;
     transition: 0.3s ease;
 }
 
@@ -77,41 +81,61 @@ nav a:hover {
     font-size: 1rem;
 }
 
-.presentacion {
-    width: 100%;
-    padding: 50px 20px;
+.hero {
     display: flex;
-    background: linear-gradient(180deg, #ffffff, #88d7f1);
-    padding-bottom: 80px;
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background: #e7eff3;
+
 }
 
-.presentacion-content {
-    max-width: 700px;
+.hero-content {
+    max-width: 50%;
 }
 
-.presentacion-img {
-    width: 500px;
-    height: auto;
-    margin-bottom: 10px;
+.hero-content h2 {
+    font-size: 2.2rem;
+    font-weight: 650;
+    color: #3c5566;
+    margin-bottom: 20px;
 }
 
-.presentacion h2 {
-    font-size: 32px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.presentacion p {
-    font-size: 18px;
-    color: #666;
-    margin: 0 20px;
+.hero-content p {
+    font-size: 1.1rem;
+    color: #3c5566;
+    margin-bottom: 30px;
     line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: #0f77b7;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #655f5f;
+    color: #fff;
 
 }
 
+.hero img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
 /* seccion del por que */
 .por-que {
