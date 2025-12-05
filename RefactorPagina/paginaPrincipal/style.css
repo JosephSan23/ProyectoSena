@@ -81,12 +81,14 @@ nav a:hover {
     font-size: 1rem;
 }
 
+/*Seccion del hero*/
+
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 60px 80px;
-    background: #e7eff3;
+    background: linear-gradient(to bottom, #fff, #fff);
 
 }
 
@@ -141,13 +143,13 @@ nav a:hover {
 .por-que {
     padding: 60px 20px;
     text-align: center;
-    background: linear-gradient(180deg, #88d7f1, #ffffff);
+    background: #ebfaff;
 }
 
 .por-que h2 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     margin-bottom: 25px;
-    color: #3c5566;
+    color: #2d86c3;
 }
 
 .por-que p.sub {
@@ -188,4 +190,12 @@ nav a:hover {
 .por-que-item p {
     color: #555;
     font-size: 0.95rem;
+}
+
+
+/*Caracteristicas*/
+.caracteristicas {
+    padding: 70px 20px;
+    text-align: center;
+    background: #ffffff;
 }
