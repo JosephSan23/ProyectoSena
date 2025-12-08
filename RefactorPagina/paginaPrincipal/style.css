@@ -194,8 +194,66 @@ nav a:hover {
 
 
 /*Caracteristicas*/
+.titulo-seccion {
+    padding: 70px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #063659;
+}
+
 .caracteristicas {
     padding: 70px 20px;
     text-align: center;
     background: #ffffff;
+}
+
+.caracteristicas h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #063659;
+}
+
+.caracteristicas .sub {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.caracteristicas-item {
+    background: transparent;
+    text-align: left;
+    padding: 0;
+}
+
+.caracteristicas-item i {
+    font-size: 36px;
+    color: #063639;
+    margin-bottom: 12px;
+}
+
+.caracteristicas-item h3 {
+    font-size: 1.2rem;
+    color: #063659;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.caracteristicas-item p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.45rem;
 }

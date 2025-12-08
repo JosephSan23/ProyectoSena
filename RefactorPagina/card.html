@@ -1,0 +1,112 @@
+<style>
+    /* CONTENEDOR GENERAL */
+    .estado-academico {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 60px 20px;
+        font-family: "Inter", sans-serif;
+    }
+
+    /* TITULO IZQUIERDA */
+    .estado-academico .titulo {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.1;
+        max-width: 350px;
+    }
+
+    .estado-academico .titulo span {
+        font-size: 14px;
+        font-weight: 700;
+        background: #00e0c6;
+        padding: 4px 10px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    /* GRID DERECHA */
+    .caracteristicas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 40px;
+        max-width: 900px;
+    }
+
+    /* ITEMS */
+    .caracteristicas-item i {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .caracteristicas-item h3 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .caracteristicas-item p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.4;
+        max-width: 240px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="estado-academico">
+
+    <!-- TITULO GRANDE A LA IZQUIERDA -->
+    <div class="titulo">
+        <span style="font-size:14px; font-weight:700; background:#00e0c6; padding:4px 10px; border-radius:4px;">
+            TAMBIÉN INCLUYE
+        </span>
+        <br><br>
+        Todo lo que tu institucion <br>
+        necesita para una gestion <br>
+        moderna y eficiente. <br>
+    </div>
+
+    <!-- ITEMS A LA DERECHA -->
+    <div class="caracteristicas-grid">
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-user-gear"></i>
+            <h3>Gestión de usuarios</h3>
+            <p>Administra estudiantes, profesores, acudientes y administradores desde un mismo panel.</p>
+        </div>
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-book"></i>
+            <h3>Gestión Académica</h3>
+            <p>Controla cursos, materias, horarios, calificaciones y asistencia.</p>
+        </div>
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-file-lines"></i>
+            <h3>Reportes automáticos</h3>
+            <p>Genera boletines, certificados y listados en segundos.</p>
+        </div>
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Notificaciones automáticas</h3>
+            <p>Envía avisos a estudiantes, docentes o acudientes al instante.</p>
+        </div>
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>Acceso multiplataforma</h3>
+            <p>Disponible en computador, tablet o celular.</p>
+        </div>
+
+        <div class="caracteristicas-item">
+            <i class="fa-solid fa-shield"></i>
+            <h3>Seguridad y roles</h3>
+            <p>Permisos avanzados para proteger la información institucional.</p>
+        </div>
+
+    </div>
+
+</section>
