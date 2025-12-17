@@ -248,6 +248,7 @@ nav a:hover {
     max-width: 240px;
 }
 
+/* apartado de soluciones */
 .titulo-sol {
     padding: 70px 20px;
     text-align: center;
@@ -267,17 +268,13 @@ nav a:hover {
 }
 
 .soluciones {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
     background: #ebfaff;
-
 }
 
 .soluciones-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
