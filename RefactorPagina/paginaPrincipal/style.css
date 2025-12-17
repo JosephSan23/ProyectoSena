@@ -200,7 +200,7 @@ nav a:hover {
 }
 
 .titulo-seccion h2 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     margin-bottom: 5px;
     color: #063659;
 }
@@ -246,4 +246,78 @@ nav a:hover {
     color: #555;
     line-height: 1.4;
     max-width: 240px;
+}
+
+.titulo-sol {
+    padding: 70px 20px;
+    text-align: center;
+    background: #ebfaff;
+
+}
+
+.titulo-sol h2 {
+    font-size: 2.1rem;
+    color: #2d86c3;
+    margin-bottom: 10px;
+}
+
+.titulo-sol p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.soluciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    background: #ebfaff;
+
+}
+
+.soluciones-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solucion-box {
+    display: flex;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 220px;
+}
+
+
+.solucion-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.solucion-texto {
+    flex: 1;
+    padding: 50px;
+}
+
+.solucion-texto h3 {
+    font-size: 1.5rem;
+    color: #063659;
+    margin-bottom: 15px;
+}
+
+.solucion-texto p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6rem;
+}
+
+.solucion-imagen {
+    width: 45%;
+}
+
+.solucion-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
