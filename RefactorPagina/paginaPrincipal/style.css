@@ -269,6 +269,7 @@ nav a:hover {
 
 .soluciones {
     background: #ebfaff;
+    padding-bottom: 80px;
 }
 
 .soluciones-lista {
@@ -342,8 +343,9 @@ nav a:hover {
 }
 
 .footer-contacto p {
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
     color: #eeeeee;
 }
