@@ -318,3 +318,66 @@ nav a:hover {
     height: 100%;
     object-fit: cover;
 }
+
+.footer {
+    background: linear-gradient(150deg, #88daf1, #0a537f);
+    color: #fff;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 4px 0;
+    color: #eeeeee;
+}
+
+.footer-contacto p {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    color: #eeeeee;
+}
+
+.footer-legal {
+    margin-top: 10px;
+}
+
+.footer-legal a {
+    color: #eeeeee;
+    text-decoration: none;
+    margin: 0 4px;
+    font-size: 0.85rem;
+}
+
+.footer-legal a:hover {
+    color: var(--azulito);
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-social a img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
