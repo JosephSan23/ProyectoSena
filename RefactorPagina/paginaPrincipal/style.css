@@ -27,14 +27,26 @@ section {
 }
 
 .logo {
-    display: flex;
+    font-size: 1.8rem;
+    font-family: 'Poppins';
+    color: white;
+    font-weight: 900;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    letter-spacing: 1px;
 }
 
-.logo img {
-    height: 42px;
-    width: 130px;
+.o-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.birrete {
+    position: absolute;
+    top: -14%;
+    left: -26%;
+    width: 30px;
+    pointer-events: none;
 }
 
 .nav-actions {
