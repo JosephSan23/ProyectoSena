@@ -8,6 +8,10 @@ body {
     font-family: 'Poppins';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     width: 100%;
     padding: 20px 40px;
@@ -23,7 +27,11 @@ header {
 }
 
 section {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 100px;
+    scroll-behavior: smooth;
+
+    padding-top: 20px;
+    padding-bottom: 80px;
 }
 
 .logo {
@@ -253,6 +261,7 @@ nav a:hover {
     padding: 70px 20px;
     text-align: center;
     background: #ebfaff;
+    scroll-margin-top: 80px;
 
 }
 
