@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#eef2f7;
+    font-family:Arial, sans-serif;
+    color:#222;
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:40px 20px 10px;
+}
+
+header h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+header p{
+    color:#777;
+    font-size:14px;
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, 180px);
+    justify-content:center;
+    gap:25px;
+    padding:40px;
+}
+
+/* Cards */
+
+.logo-card{
+    background:white;
+    border-radius:18px;
+    padding:20px 15px;
+    width:180px;
+    height:180px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+.logo-card:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 15px;
+}
+/* Imagen */
+
+.logo-card img{
+    width:70px;
+    margin-bottom:12px;
+}
+
+/* Texto */
+
+.logo-card h2{
+    font-size:16px;
+    margin-bottom:4px;
+    text-align:center;
+}
+
+.logo-card span{
+    font-size:12px;
+    color:#888;
+}
+
+/* Tipografías */
+
+.montserrat h2{
+    font-family:'Montserrat', sans-serif;
+}
+
+.poppins h2{
+    font-family:'Poppins', sans-serif;
+}
+
+.playfair h2{
+    font-family:'Playfair Display', serif;
+}
+
+.quicksand h2{
+    font-family:'Quicksand', sans-serif;
+}
