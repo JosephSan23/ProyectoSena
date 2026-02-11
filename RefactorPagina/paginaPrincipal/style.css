@@ -19,6 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(150deg, #0a537f, #88daf1);
+    /* color opcional #3e5664 */
     border-bottom: 1px solid #c5c7cb;
     position: sticky;
     top: 0;
@@ -34,7 +35,7 @@ section {
     padding-bottom: 80px;
 }
 
-.logo {
+/* .logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -43,6 +44,29 @@ section {
 .logo img {
     height: 42px;
     width: 130px;
+} */
+.inline h2 {
+    font-family:'Quicksand';
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.text-left {
+    margin-right: -10px;
+    z-index: 2;
+}
+
+.text-right {
+    margin-left: -10px;
+    z-index: 2;
+}
+
+.inline img{
+    width:56px;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-actions {
