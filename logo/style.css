@@ -102,3 +102,43 @@ header p{
 .quicksand h2{
     font-family:'Quicksand', sans-serif;
 }
+
+
+.logo-test{
+    font-family:'Quicksand', sans-serif;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Horizontal */
+
+.horizontal{
+    flex-direction:row;
+}
+
+.horizontal img{
+    width:50px;
+}
+
+/* Vertical */
+
+.vertical{
+    flex-direction:column;
+}
+
+.vertical img{
+    width:70px;
+}
+
+/* Inline */
+
+.inline img{
+    width:28px;
+    vertical-align:middle;
+}
