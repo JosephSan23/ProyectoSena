@@ -115,3 +115,28 @@
     cursor: pointer;
     accent-color: #0a537f;
 }
+
+.btn-primary-login {
+    width: 100%;
+    background: #0a537f;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    margin-top: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary-login:hover {
+    background: #0f77b7;
+}
+
+.btn-primary-login:hover i {
+    transform: translateX(5px);
+}
