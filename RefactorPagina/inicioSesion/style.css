@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-wrapper {
+    min-height: 100vh;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter';
+}
+
+.login-box {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.side-info {
+    flex: 1.2;
+    background: linear-gradient(135deg, #0a537f, #0f77b7);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.welcome-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.welcome-text span {
+    color: #88daf1;
+}
+
+.side-form {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    color: #063659;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0 15px;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #0f77b7;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(15, 119, 183, 0.1);
+}
+
+.input-wrapper input {
+    border: none;
+    background: transparent;
+    padding: 15px;
+    width: 100%;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #0f77b7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #0a537f;
+    text-decoration: underline;
+}
+
+.remember-me input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #0a537f;
+}
