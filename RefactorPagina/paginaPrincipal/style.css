@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -45,29 +47,35 @@ section {
     height: 42px;
     width: 130px;
 } */
-.inline h2 {
-    font-family:'Quicksand';
-    color: white;
+.inline {
     display: flex;
     align-items: center;
-    position: relative;
+}
+
+.logo-title {
+    font-family: 'Baloo 2', cursive;
+    /* font-family: 'Fredoka'; */
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo-icon {
+    height: 45px;
+    width: auto;
 }
 
 .text-left {
-    margin-right: -10px;
-    z-index: 2;
+    color: #1f4f7a;
+    font-weight: 600;
 }
 
 .text-right {
-    margin-left: -10px;
-    z-index: 2;
+    color: #f57c00;
+    font-weight: 600;
 }
 
-.inline img{
-    width:56px;
-    position: relative;
-    z-index: 1;
-}
+
 
 .nav-actions {
     display: flex;
