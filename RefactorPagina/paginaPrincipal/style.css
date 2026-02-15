@@ -3,6 +3,7 @@
     --azul-oscuro: #0a2540; /* Ajusta al azul de tu logo */
     --naranja-optim: #f36f21; /* El naranja de tu botón 'Registrarse' */
     --blanco: #ffffff;
+    --azul-head: #078ac3;
 }
 
 * {
@@ -95,7 +96,7 @@ nav ul {
 }
 
 nav a {
-    color: #00b0fb;
+    color: var(--azul-head);
     text-decoration: none;
     font-size: 1rem;
     position: relative;
@@ -103,7 +104,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #11a3e6;
+    color: #095b80;
     text-decoration: none;
 }
 
@@ -142,7 +143,7 @@ nav a:hover::after {
 }
 
 .btn-login {
-    color: #088ded;
+    color: var(--azul-head);
     background: transparent;
     border: 1.5px solid rgba(18, 124, 217, 0.7);
     /* backdrop-filter: blur(5px); */
