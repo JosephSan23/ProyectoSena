@@ -20,8 +20,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(150deg, #0a537f, #88daf1);
-    /* color opcional #3e5664 */
+    background: white;
     border-bottom: 1px solid #c5c7cb;
     position: sticky;
     top: 0;
@@ -91,7 +90,7 @@ nav ul {
 }
 
 nav a {
-    color: #fff;
+    color: #00b0fb;
     text-decoration: none;
     font-size: 1rem;
     position: relative;
@@ -138,9 +137,9 @@ nav a:hover::after {
 }
 
 .btn-login {
-    color: #fff;
+    color: #088ded;
     background: transparent;
-    border: 1.5px solid rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(18, 124, 217, 0.7);
     /* backdrop-filter: blur(5px); */
 }
 
@@ -152,8 +151,8 @@ nav a:hover::after {
 }
 
 .btn-register {
-    background: #fff;
-    color: #0a537f;
+    background: #e86108;
+    color: #ffffff;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
