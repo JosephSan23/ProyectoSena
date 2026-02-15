@@ -41,17 +41,6 @@ section {
     padding-top: 20px;
     padding-bottom: 80px;
 }
-
-/* .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 42px;
-    width: 130px;
-} */
 .inline {
     display: flex;
     align-items: center;
@@ -184,28 +173,46 @@ nav a:hover::after {
     left: 100%;
 }
 
-/* .auth-buttons a {
-    padding: 10px;
-    background: #56bee1;
-    color: white;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
+header.navbar.header-active {
+    background-color: #095b80;
+    padding: 18px 3%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-bottom: none;
 }
 
-.auth-buttons a:hover {
-    background: #0f77b7;
-    transition: 0.3s ease;
+.header-active .text-left,
+.header-active .text-right {
+    color: #fff;
 }
 
-.auth-buttons a i {
-    margin-right: 8px;
-    font-size: 1rem;
-} */
+.header-active .logo-icon {
+    filter: brightness(0) invert(1);
+}
+
+.header-active .nav-link {
+    color: #fff!important;
+}
+
+.header-active .btn-login {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.header-active .btn-login:hover {
+    color: #095b80 !important;
+}
+
+header.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
 /*Seccion del hero*/
 .hero {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background-color: var(--azul-oscuro);
