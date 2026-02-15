@@ -103,7 +103,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #fff;
+    color: #11a3e6;
     text-decoration: none;
 }
 
@@ -114,7 +114,7 @@ nav a::after {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #fff;
+    background-color: #f16507;
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%);
 }
