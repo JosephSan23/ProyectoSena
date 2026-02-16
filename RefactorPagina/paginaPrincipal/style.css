@@ -528,9 +528,36 @@ header.navbar {
     transform: scale(1.05);
 }
 
-/* .lightbox {
+.lightbox {
     display: none;
-} */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,37,64,0.9);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-active img {
+    transform: scale(1);
+}
 
 /*Caracteristicas*/
 .titulo-seccion {
