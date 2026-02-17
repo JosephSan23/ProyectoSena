@@ -559,6 +559,78 @@ header.navbar {
     transform: scale(1);
 }
 
+/* Apartado de Capabilities */
+.system-capabilities {
+    padding: 100px 5%;
+    background-color: #fff;
+}
+
+.system-capabilities .capi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+.capabilities-intro {
+    flex: 1;
+    position: sticky;
+    top: 50%;
+}
+
+.badge-tag {
+    display: inline-block;
+    color: #4a6b8a;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.capabilities-intro h2 {
+    font-size: 2.5rem;
+    color: #4a6b8a;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.capabilities-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+}
+
+.cap-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-box {
+    margin-bottom: 20px;
+}
+
+.icon-box i {
+    font-size: 1.8rem;
+    color: #617d98;
+}
+
+.cap-item h3 {
+    font-size: 1.15rem;
+    color: #0a2540;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.cap-item p {
+    font-size: 0.95rem;
+    color: #5c7184;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /*Caracteristicas*/
 .titulo-seccion {
     padding: 70px 20px;
