@@ -433,7 +433,7 @@ header.navbar {
 
 /* seccion features */
 .features-detailed {
-    padding: 100px 8% !important;
+    padding: 100px 5% !important;
     background-color: #f8fbff;
 }
 
@@ -442,7 +442,7 @@ header.navbar {
     align-items: center;
     justify-content: space-between;
     gap: 80px;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 }
 
 .feature-item.reverse {
