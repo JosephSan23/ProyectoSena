@@ -321,6 +321,98 @@ header.navbar {
     }
 }
 
+/* seccion del problema */
+.problem-discovery {
+    padding: 100px 5%;
+    background-color: #fcfdfe;
+}
+
+.problem-discovery .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.problem-main-content {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 70px;
+}
+
+.problem-label {
+    color: #e63946;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.problem-main-content h2 {
+    font-size: 2.5rem;
+    color: #0a2540;
+    margin: 15px 0 20px;
+    line-height: 1.2;
+}
+
+.problem-subtitle {
+    color: #5c7184;
+    font-size: 1.1rem;
+}
+
+.problem-list {
+    width: 100%;
+}
+
+.problem-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-bottom: 1px solid #e1e8ed;
+    transition: all 0.3s ease;
+}
+
+.problem-row:first-child {
+    border-top: 1px solid #e1e8ed;
+}
+
+.problem-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(10, 37, 64, 0.1);
+    margin-right: 50px;
+    font-family: serif;
+    line-height: 1;
+    min-width: 60px;
+}
+
+.problem-info {
+    flex: 1;
+}
+
+.problem-info h3 {
+    font-size: 1.4rem;
+    color: #0a2540;
+    margin-bottom: 10px;
+}
+
+.problem-info p {
+    color: #5c7184;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.problem-row:hover {
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.problem-row:hover .problem-number {
+    color: #e63946;
+}
+
 /* seccion del por que */
 .why {
     padding: 80px 5%;
