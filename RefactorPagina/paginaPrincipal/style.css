@@ -580,7 +580,10 @@ header.navbar {
 
 .badge-tag {
     display: inline-block;
+    background-color: rgba(33, 166, 243, 0.1);
     color: #4a6b8a;
+    padding: 6px 16px;
+    border-radius: 10px;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -630,62 +633,6 @@ header.navbar {
     line-height: 1.6;
     margin: 0;
 }
-
-/*Caracteristicas*/
-.titulo-seccion {
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.titulo-seccion h2 {
-    font-size: 2.1rem;
-    margin-bottom: 5px;
-    color: #063659;
-}
-
-.caracteristicas {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px 20px;
-
-}
-
-.caracteristicas .titulo {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.1;
-    max-width: 350px;
-    color: #2a2525;
-}
-
-.caracteristicas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px 40px;
-    max-width: 900px;
-}
-
-.caracteristicas-item i {
-    font-size: 28px;
-    margin-bottom: 12px;
-    color: #4f7084;
-}
-
-.caracteristicas-item h3 {
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.caracteristicas-item p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.4;
-    max-width: 240px;
-}
-
 /* apartado de soluciones */
 .titulo-sol {
     padding: 70px 20px;
