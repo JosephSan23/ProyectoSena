@@ -830,66 +830,97 @@ header.navbar {
 }
 
 /* seccion del footer */
-.footer {
-    background: linear-gradient(150deg, #88daf1, #0a537f);
+.main-footer {
+    background-color: #095b80;
     color: #fff;
-    padding: 30px 20px;
-    font-size: 0.9rem;
+    padding: 60px 5% 30px;
 }
 
-.footer-contenedor {
-    max-width: 1100px;
+.footer-container {
+    max-width: 1300px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    text-align: center;
 }
 
-.footer-info p {
-    margin: 4px 0;
-    color: #eeeeee;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-contacto p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #eeeeee;
+.footer-col h4{
+    color: var(--naranja-optim);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
-.footer-legal {
-    margin-top: 10px;
+.footer-col p {
+    color: #cbd5e0;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.footer-legal a {
-    color: #eeeeee;
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #cbd5e0;
     text-decoration: none;
-    margin: 0 4px;
-    font-size: 0.85rem;
+    transition: 0.3s;
+    font-size: 0.95rem;
 }
 
-.footer-legal a:hover {
-    color: var(--azulito);
+.footer-col ul li a:hover {
+    color: #f36f21;
+    padding-left: 5px;
 }
 
-.footer-social {
+.social-links {
+    margin-top: 20px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
-.footer-social a img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+.social-links a:hover {
+    background: #f36f21;
 }
 
-.footer-social a img:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cbd5e0;
+}
+
+.contact-info i {
+    color: #f36f21;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
 }
