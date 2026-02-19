@@ -139,8 +139,8 @@ nav a:hover::after {
 }
 
 .btn-login:hover {
-    background: #fff;
-    color: #0a537f;
+    background: #0a537f;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -199,6 +199,7 @@ header.navbar.header-active {
 }
 
 .header-active .btn-login:hover {
+    background: var(--blanco);
     color: #095b80 !important;
 }
 
