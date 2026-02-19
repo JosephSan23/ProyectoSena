@@ -651,6 +651,97 @@ header.navbar {
     transform: scale(1);
 }
 
+/* Seccion de solutions */
+.solutions-roles {
+    padding: 100px 5%;
+    background-color: #f0f7ff;
+}
+
+.solutions-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.solutions-header h2 {
+    font-size: 2.5rem;
+    color: #0a2540;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.solutions-header p {
+    font-size: 1.1rem;
+    color: #5c7184;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.solutions-mosaic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.role-box {
+    display: flex;
+    background: #fff1ea;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(10, 27, 64, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(10, 37, 64, 0.12);
+}
+
+.role-img {
+    flex: 1;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.role-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.role-info {
+    flex: 1.2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.role-info h3 {
+    color: #0a2540;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.role-info h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #f36f21;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.role-info p {
+    color: #5c7184;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
 /* Apartado de Capabilities */
 .system-capabilities {
     padding: 100px 5%;
