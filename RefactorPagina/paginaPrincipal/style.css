@@ -525,8 +525,12 @@ header.navbar {
 
 /* seccion features */
 .features-detailed {
-    padding: 100px 5% !important;
+    padding: 100px 5%;
     background-color: #f8fbff;
+}
+
+.features-detailed .container {
+    flex-direction: column;
 }
 
 .feature-item {
@@ -657,6 +661,10 @@ header.navbar {
     background-color: #f0f7ff;
 }
 
+.solutions-roles .container {
+    flex-direction: column;
+}
+
 .solutions-header {
     text-align: center;
     margin-bottom: 60px;
@@ -684,7 +692,7 @@ header.navbar {
 
 .role-box {
     display: flex;
-    background: #fff1ea;
+    background: #fff;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(10, 27, 64, 0.05);
