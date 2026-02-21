@@ -146,3 +146,101 @@ body {
     z-index: 2;
     margin: 0;
 }
+
+.final-cta-dark {
+    background-color: #0a2540;
+    padding: 120px 5%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cta-overlay-graphics {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(243, 111, 33, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-tag {
+    color: #f36f21;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.final-cta-dark h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.final-cta-dark p {
+    color: #cbd5e0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.btn-primary-orange {
+    background-color: #f36f21;
+    color: #fff;
+    padding: 20px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(243,111,33,0.3);
+}
+
+.btn-primary-orange:hover {
+    background-color: #ff8133;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(243, 111, 33, 0.5);
+}
+
+.btn-primary-orange i {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary-orange:hover i {
+    transform: translateX(5px);
+}
+
+.cta-note {
+    margin-top: 25px;
+    color: #a0aec0;
+    font-size: 0.95rem;
+}
+
+.cta-note a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #f36f21;
+    transition: 0.3s;
+}
+
+.cta-note a:hover {
+    color: #f36f21;
+}
