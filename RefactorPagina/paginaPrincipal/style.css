@@ -243,7 +243,9 @@ nav > ul > li >a:hover::after {
 }
 
 header.navbar.header-active {
-    background-color: #095b80;
+    /* background-color: #095b80; */
+    background-color: #0a2540;
+    
     padding: 18px 3%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     border-bottom: none;
@@ -901,9 +903,11 @@ header.navbar {
 
 /* seccion del footer */
 .main-footer {
-    background-color: #095b80;
+    /* background-color: #095b80; */
+    background-color: #0a2540;
     color: #fff;
     padding: 60px 5% 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
