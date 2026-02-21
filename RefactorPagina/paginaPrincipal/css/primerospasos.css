@@ -53,3 +53,85 @@ body {
     max-width: 750px;
     margin: 0 auto;
 }
+
+.section-dark-bg {
+    background-color: #0a2540;
+    padding: 80px 5%;
+    color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #f36f21;
+    margin-bottom: 60px;
+    letter-spacing: -0.5px;
+}
+
+.steps-path-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.path-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 50px 40px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.path-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #f36f21;
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.path-step {
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(243, 111, 33, 0.08);
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    user-select: none;
+    transition: color 0.4s ease;
+}
+
+.path-card:hover .path-step {
+    color: rgba(243, 111, 33, 0.15);
+}
+
+.path-icon {
+    font-size: 2.5rem;
+    color: #f36f21;
+    margin-bottom: 25px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.path-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.path-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cbd5e0;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
