@@ -8,59 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="login-box">
-            <div class="side-info">
-                <div class="welcome-text">
-                    <span class="badge">OptimScul</span>
-                    <h1>Bienvenido de nuevo<span>.</span></h1>
-                    <p>Gestiona, aprende y conecta en un solo lugar.</p>
-                </div>
-
-                <div class="abstract-shape"></div>
+    <div class="login-container">
+        <div class="brand-panel">
+            <div class="brand-content">
+                <img src="../paginaPrincipal/logo.png" alt="">
+                <p id="inspiring-quote">Optimizando el futuro de la educación.</p>
             </div>
+        </div>
 
-            <div class="side-form">
-                <div class="form-header">
-                    <h2>Iniciar Sesión</h2>
-                    <p>Ingresa tus credenciales para acceder</p>
+        <div class="form-panel">
+            <form class="login-form">
+                <h2>Ingresa a OptimScul</h2>
+
+                <label for="user">Correo o Usuario</label>
+                <input type="text" id="user" name="user" placeholder="ejemplo@dominio.com" required>
+
+                <div class="password-header">
+                    <label for="pass">Contraseña</label>
+                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
                 </div>
+                <input type="password" id="pass" name="pass" required>
 
-                <form>
-                    <div class="input-field">
-                        <label for="email">Correo electronico</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-at"></i>
-                            <input type="email" placeholder="ejemplo@tucolegio.com" required>
-                        </div>
-                    </div>
+                <button type="submit" class="btn-log">Iniciar Sesión</button>
 
-                    <div class="input-field">
-                        <label for="password">Contraseña</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="••••••••" required>
-                        </div>
-                    </div>
+                <p class="visitor-text">¿No formas parte de una institucion?
+                    <a href="#">Contáctanos o postula a un estudiante aquí</a>
+                </p>
 
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Recordarme</label>
-                        </div>
-                        <a href="" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                    </div>
-
-                    <button class="btn-primary-login">
-                        Entrar a la plataforma
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </form>
-
-                <div class="form-footer">
-                    <p>¿No formas parte de una institucion? <a href="#">Crea una cuenta</a></p>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </body>
