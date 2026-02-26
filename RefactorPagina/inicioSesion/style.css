@@ -100,7 +100,7 @@ body {
     max-width: 400px;
     background: white;
     padding: 40px;
-    border: 20px;
+    border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
