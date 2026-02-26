@@ -34,7 +34,7 @@ body {
 
 .brand-panel {
     flex: 1.2;
-    background-image: linear-gradient(rgba(10,37,64,0.85), rgba(10, 37, 64, 0.85)), url('./fondo-log.png');
+    background-image: linear-gradient(rgb(0 0 0 / 85%), rgb(38 49 61 / 85%)), url(./fondo-log.png);
     background-size: cover;
     background-position: center;
     display: flex;
