@@ -165,9 +165,9 @@ input {
 }
 
 input:focus {
-    border-color: #f36f21;
+    border-color: #1f4f7a;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(243,111,33,0.1);
+    box-shadow: 0 0 0 3px rgba(33, 138, 243, 0.1);
     transform: translateY(-1px);
 }
 
