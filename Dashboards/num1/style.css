@@ -101,4 +101,134 @@
 
 .submenu-item:hover {
     color: #60a5fa;
+} 
+
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+
+.top-bar {
+    height: 70px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-title h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-meta {
+    text-align: right;
+}
+
+.user-name {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.user-role {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.logout-btn {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #fecaca;
+}
+
+.dashboard-grid {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-card span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+}
+
+.stat-card strong {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.activity-section {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.activity-section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-log {
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.activity-log:last-child {
+    border-bottom: none;
+}
+
+.activity-log p {
+    font-size: 0.95rem;
+    color: #334155;
 }
