@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <!-- <img src="../logo.png" alt="" class="logo-img"> -->
+                <span class="logo-text">OptimScul</span>
+            </div>
+            <button id="btn-toggle" class="toggle-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active">
+                    <a href="#">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span class="link-name">Inicio</span>
+                    </a>
+                    <span class="tooltip">Inicio</span>
+                </li>
+                <li class="nav-item has-submenu">
+                    <div class="submenu-header">
+                        <a href="#">
+                            <i data-lucide="users"></i>
+                            <span class="link-name">Usuarios</span>
+                        </a>
+                        <i data-lucide="chevron-down" class="arrow"></i>
+                    </div>
+
+                    <ul class="submenu-list">
+                        <li><a href="#">Estudiantes</a></li>
+                        <li><a href="#">Profesores</a></li>
+                        <li><a href="#">Directivos</a></li>
+                        <li><a href="#">Acudientes</a></li>
+                    </ul>
+                    <span class="tooltip">Usuarios</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i data-lucide="clipboard-list"></i>
+                        <span class="link-name">Cursos</span>
+                    </a>
+                    <span class="tooltip">Cursos</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i data-lucide="bar-chart-3"></i>
+                        <span class="link-name">Reportes</span>
+                    </a>
+                    <span class="tooltip">Reportes</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
