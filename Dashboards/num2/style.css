@@ -1,0 +1,40 @@
+:root {
+    /* Los colores de tu marca OptimScul */
+    --primary-bg: #0b2239;    /* Azul oscuro del Nav */
+    --hover-bg: #162e4a;      /* Color al pasar el mouse */
+    --accent-color: #4f9cf9;  /* Azul brillante para el estado activo */
+    --text-color: #ffffff;    /* Texto blanco */
+    --text-muted: #a0aec0;   /* Texto secundario/gris */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+body {
+    background-color: #f4f7f9;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    position: fixed;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
