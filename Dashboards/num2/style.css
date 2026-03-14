@@ -286,8 +286,30 @@ body {
 }
 
 .dropdown-header {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+    padding: 16px 20px;
+    border-bottom: 1px solid #edf2f7;
+    background-color: #f7fcfd;
+    border-radius: 16px 16px 0 0;
+}
+
+.dropdown-header p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2px;
+}
+
+.dropdown-header span {
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 400;
+    display: block;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #edf2f7;
+    margin: 0;
 }
 
 .dropdown-list {
