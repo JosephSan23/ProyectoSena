@@ -28,3 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 })
+
+const trigger = document.getElementById('user-menu-trigger');
+const dropdown = document.getElementById('user-dropdown');
+
+trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+    dropdown.classList.remove('active');
+})
