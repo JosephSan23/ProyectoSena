@@ -166,3 +166,99 @@ body {
 .tooltip {
     display: none;
 }
+
+/* Estilos del header  */
+
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    transition: var(--transition);
+}
+
+.main-header {
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 1px solid #edf2f7;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f7fafc;
+    padding: 8px 16px;
+    border-radius: 12px;
+    width: 350px;
+    gap: 10px;
+}
+
+.search-bar svg {
+    width: 18px;
+    height: 18px;
+    color: #a0aec0;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #4a5568;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+    color: #718096;
+    display: flex;
+    align-items: center;
+}
+
+.notifications:hover {
+    color: var(--accent-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.user-role {
+    font-size: 0.95rem;
+    color: #a0aec0;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    object-fit: cover;
+}

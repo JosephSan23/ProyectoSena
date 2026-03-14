@@ -78,12 +78,34 @@
                 <div class="notifications">
                     <i data-lucide="bell"></i>
                 </div>
-                <div class="user-info">
+                <div class="user-info" id="user-menu-trigger">
                     <div class="user-details">
                         <span class="user-name">Carlos Gomez</span>
                         <span class="user-role">Administrador</span>
                     </div>
-                    <img src="" alt="Carlos" class="avatar">
+                    <div class="avatar wrapper">
+                        <img src="./cara.jpg" alt="Carlos" class="avatar">
+                        <div class="status-indicator"></div>
+                    </div>
+
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-header">
+                            <p>Carlos Gomez</p>
+                            <span>carlos@escuela.com</span>
+                        </div>
+                        <hr>
+                        <ul class="dropdown-list">
+                            <li><i data-lucide="user"></i>Mi Perfil</li>
+                            <li class="role-switcher">
+                                <i data-lucide="repeat"></i>
+                                <div>
+                                    <p>Cambiar a:</p>
+                                    <span>Padre de Familia</span>
+                                </div>
+                            </li>
+                            <li class="logout"><i data-lucide="log-out"></i>Cerrar Sesión</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
