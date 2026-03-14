@@ -312,6 +312,34 @@ hr {
     margin: 0;
 }
 
+.role-switcher {
+    background-color: #f7fafc;
+    margin: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.role-text p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #a0aec0;
+    font-weight: 700;
+    margin: 0;
+}
+
+.role-text span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.role-switcher i, .role-switcher svg {
+    color: var(--accent-color);
+    width: 18px;
+    height: 18px;
+}
+
 .dropdown-list {
     list-style: none;
 }
