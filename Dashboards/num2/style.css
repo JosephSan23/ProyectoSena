@@ -446,6 +446,31 @@ hr {
     line-height: 1.2;
 }
 
+.no-progress {
+    justify-content: space-between;
+}
+
+.no-progress .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.no-progress h3 {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.no-progress .stat-number {
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.no-progress .card-bottom {
+    justify-content: flex-end;
+}
+
 .progress-container {
     background: rgba(255,255,255,0.2);
     height: 8px;
