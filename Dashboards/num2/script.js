@@ -2,41 +2,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const btnToggle = document.getElementById('btn-toggle');
     const hasSubmenu = document.querySelectorAll('.has-submenu');
+    const userTrigger = document.getElementById('user-menu-trigger');
+    const userDropdown =  document.getElementById('user-dropdown');
 
-    btnToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
+    // boton hamburguesa
+    if (btnToggle && sidebar) {
+        btnToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            sidebar.classList.toggle('collapsed');
 
-        if (sidebar.classList.contains('collapsed')) {
-            sidebar.style.width = '85px';
-            hasSubmenu.forEach(item => item.classList.remove('open'));
-        } else {
-            sidebar.style.width = '260px';
+            if (sidebar.classList.contains('collapsed')) {
+                hasSubmenu.forEach(item => item.classList.remove('open'));
+            }
+
+            console.log('Sidebar colapsado: ', sidebar.classList.contains('collapsed'));
+        });
+    }
+
+    // submenus
+    hasSubmenu.forEach(item => {
+        const header = item.querySelector('.submenu-header');
+        if (header) {
+            header.addEventListener('click', (e) => {
+                if (sidebar.classList.contains('collapsed')) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                // cerrar otros menus abiertos
+                hasSubmenu.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('open');
+                });
+
+                item.classList.toggle('open');  
+            });
         }
     });
 
-    hasSubmenu.forEach(item => {
-        const header = item.querySelector('.submenu-header');
-        header.addEventListener('click', (e) => {
-            e.preventDefault();
-            item.classList.toggle('open');
-
-            hasSubmenu.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('open');
-                }
-            });
+    if (userTrigger && userDropdown) {
+        userTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userDropdown.classList.toggle('active');
         });
-    });
-})
 
-const trigger = document.getElementById('user-menu-trigger');
-const dropdown = document.getElementById('user-dropdown');
-
-trigger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('active');
+        document.addEventListener('click', () => {
+            userDropdown.classList.remove('active');
+        });
+    }
 });
-
-document.addEventListener('click', () => {
-    dropdown.classList.remove('active');
-})
