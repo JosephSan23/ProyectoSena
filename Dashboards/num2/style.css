@@ -29,13 +29,15 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 0 10px;
 }
 
@@ -364,6 +366,52 @@ hr {
     color: #e53e3e !important;
 }
 
+/* logo header boton hamburuguesa */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+.sidebar.collapsed .logo-text,
+.sidebar.collapsed .link-name,
+.sidebar.collapsed .arrow,
+.sidebar.collapsed .submenu-list,
+.sidebar.collapsed .tooltip {
+    display: none;
+}
+
+.sidebar.collapsed .nav-item a, 
+.sidebar.collapsed .submenu-header {
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.sidebar.collapsed .nav-item i,
+.sidebar.collapsed .nav-item svg {
+    margin-right: 0;
+}
+
+/* CENTRAR EL BOTÓN HAMBURGUESA */
+.sidebar.collapsed .sidebar-header {
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.main-header .header-logo {
+    display: none;
+}
+
+.sidebar.collapsed + .main-content .header-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}   
+/* contenido del body */
+
 .dashboard-body {
     padding: 40px;
     background-color: #f4f7f9;
@@ -448,6 +496,7 @@ hr {
 
 .no-progress {
     justify-content: space-between;
+    
 }
 
 .no-progress .card-content {
@@ -539,5 +588,17 @@ hr {
 
     to {
         opacity: 1; transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1; 
+        transform: translateX(0);
     }
 }
