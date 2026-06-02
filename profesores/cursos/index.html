@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bienvenido Carlos</h1>
+    <p>Mis cursos asignados: </p>
+
+    <div>
+        <h3>9° Grado A - Mañana</h3>
+        <p><strong>Tipo: </strong> Academico</p>
+        <p><strong>Descripcion: </strong> Curso enfocado en el grado noveno.</p>
+        <p><strong>Capacidad Maxima: </strong> 35 estudiantes</p>
+        <p><strong>Estado: </strong> Activo</p>
+
+        <button onclick="abrirModal('modal-9a')">Ver materias</button>
+    </div>
+    <br><br>
+
+    <div>
+        <h3>10° Grado B - Tarde</h3>
+        <p><strong>Tipo: </strong> Academico</p>
+        <p><strong>Descripcion: </strong> Curso enfocado en el grado decimo.</p>
+        <p><strong>Capacidad Maxima: </strong> 30 estudiantes</p>
+        <p><strong>Estado: </strong> Activo</p>
+
+        <button onclick="abrirModal('modal-10b')">Ver materias</button>
+
+    </div>
+
+    <dialog id="modal-10b">
+        <h2>Materias en 10°B</h2>
+        <button onclick="irAPanel('10° B', 'Trigonometria')">Trigonometria</button>
+        <br><br>
+        <button onclick="cerrarModal('modal-10b')">Cerrar</button>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
