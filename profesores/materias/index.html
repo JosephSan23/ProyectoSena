@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Materia | OptimScul</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <style>
+        :root {
+            --color-navy:              #0f2748;
+            --color-orange:            #f97316;
+            --color-orange-dark:       #ea6a00;
+            --color-orange-light:      #fff4ed;
+            --color-orange-border:     #fed7aa;
+            --color-bg-page:           #f1f5f9;
+            --color-card-bg:           #ffffff;
+            --color-card-body:         #f8fafc;
+            --color-text-main:         #0f172a;
+            --color-text-muted:        #64748b;
+            --color-border:            #e2e8f0;
+            --color-green-bg:          #dcfce7;
+            --color-green-text:        #166534;
+            --color-warn-bg:           #fef3c7;
+            --color-warn-text:         #92400e;
+            --color-red-bg:            #fee2e2;
+            --color-red-text:          #991b1b;
+
+            --sidebar-width:  260px;
+            --header-height:  64px;
+            --radius-sm:      6px;
+            --radius-md:      10px;
+            --radius-lg:      14px;
+            --radius-pill:    999px;
+            --shadow-card:    0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-modal:   0 24px 64px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.1);
+            --transition:     150ms ease;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-size: 15px;
+            color: var(--color-text-main);
+            background: var(--color-bg-page);
+            line-height: 1.6;
+        }
+
+        /* ══════════════════════════════
+           ÁREA DE CONTENIDO
+        ══════════════════════════════ */
+        .content-area {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            padding: calc(var(--header-height) + 1.5rem) 2rem 2rem;
+        }
+
+        /* ══════════════════════════════
+           BARRA DE VOLVER
+        ══════════════════════════════ */
+        .topbar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-pill);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: background var(--transition), color var(--transition);
+        }
+        .btn-back:hover { background: var(--color-card-bg); color: var(--color-text-main); }
+        .btn-back i { font-size: 15px; }
+
+        /* ══════════════════════════════
+           PANEL PRINCIPAL
+        ══════════════════════════════ */
+        .panel {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        /* ── TABS ── */
+        .tabs-wrap {
+            background: var(--color-card-bg);
+            border-bottom: 0.5px solid var(--color-border);
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 2px;
+        }
+
+        .tab {
+            padding: 14px 18px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+            transition: color var(--transition);
+        }
+
+        .tab i { font-size: 15px; }
+
+        .tab:hover { color: var(--color-text-main); }
+
+        .tab.active {
+            color: var(--color-navy);
+            font-weight: 600;
+            border-bottom-color: var(--color-orange);
+        }
+
+        /* ── CUERPO ── */
+        .panel-body {
+            padding: 1.5rem;
+            background: var(--color-bg-page);
+            min-height: 400px;
+        }
+
+        /* ══════════════════════════════
+           SECCIONES (visibilidad)
+        ══════════════════════════════ */
+        .section { display: none; flex-direction: column; gap: 1.25rem; }
+        .section.active { display: flex; }
+
+        /* ══════════════════════════════
+           TABLÓN
+        ══════════════════════════════ */
+        .anuncio-box {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            padding: 1rem 1.25rem;
+        }
+
+        .anuncio-box textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: var(--color-text-main);
+            background: transparent;
+            resize: none;
+            height: 64px;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+
+        .anuncio-box textarea::placeholder { color: var(--color-text-muted); }
+
+        .anuncio-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 10px;
+            border-top: 0.5px solid var(--color-border);
+            margin-top: 8px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--color-text-muted);
+        }
+
+        .aviso-list { display: flex; flex-direction: column; gap: 10px; }
+
+        .aviso-card {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            padding: 1rem 1.25rem;
+            display: flex;
+            gap: 12px;
+        }
+
+        .aviso-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--color-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .aviso-author {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .aviso-date {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-left: 8px;
+            font-weight: 400;
+        }
+
+        .aviso-text {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+            line-height: 1.55;
+        }
+
+        /* ══════════════════════════════
+           TRABAJO EN CLASE
+        ══════════════════════════════ */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .stat-card {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-md);
+            border: 0.5px solid var(--color-border);
+            padding: 14px 16px;
+        }
+
+        .stat-card__label {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 6px;
+        }
+
+        .stat-card__label i { font-size: 13px; }
+
+        .stat-card__value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-text-main);
+            line-height: 1;
+        }
+
+        .stat-card__value.orange { color: var(--color-orange); }
+
+        .stat-card__sub {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .actividades-list { display: flex; flex-direction: column; gap: 8px; }
+
+        .actividad-card {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: box-shadow var(--transition);
+        }
+
+        .actividad-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+
+        .actividad-left { display: flex; align-items: center; gap: 12px; }
+
+        .actividad-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background: var(--color-orange-light);
+            border: 0.5px solid var(--color-orange-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--color-orange);
+            flex-shrink: 0;
+        }
+
+        .actividad-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .actividad-meta {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .actividad-meta i { font-size: 11px; }
+
+        .actividad-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .pill {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            white-space: nowrap;
+        }
+
+        .pill.green { background: var(--color-green-bg); color: var(--color-green-text); }
+        .pill.warn  { background: var(--color-warn-bg);  color: var(--color-warn-text); }
+        .pill.red   { background: var(--color-red-bg);   color: var(--color-red-text); }
+
+        /* ══════════════════════════════
+           CALIFICACIONES (planilla)
+        ══════════════════════════════ */
+        .calif-context {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .calif-context__title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .calif-context__sub {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            margin-top: 2px;
+        }
+
+        .table-wrap {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-lg);
+            border: 0.5px solid var(--color-border);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead tr {
+            background: var(--color-bg-page);
+            border-bottom: 0.5px solid var(--color-border);
+        }
+
+        thead th {
+            padding: 11px 14px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-muted);
+        }
+
+        tbody tr {
+            border-bottom: 0.5px solid var(--color-border);
+            transition: background var(--transition);
+        }
+
+        tbody tr:last-child { border-bottom: none; }
+        tbody tr:hover { background: #f8fafc; }
+
+        tbody td {
+            padding: 11px 14px;
+            vertical-align: middle;
+        }
+
+        .td-nombre { font-weight: 500; color: var(--color-text-main); }
+        .td-doc    { color: var(--color-text-muted); font-size: 12px; }
+
+        .estado-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+        }
+
+        .estado-badge.entregado  { background: var(--color-green-bg); color: var(--color-green-text); }
+        .estado-badge.retrasado  { background: var(--color-warn-bg);  color: var(--color-warn-text); }
+        .estado-badge.pendiente  { background: var(--color-red-bg);   color: var(--color-red-text); }
+
+        .nota-input {
+            width: 70px;
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: 5px 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-main);
+            outline: none;
+            transition: border-color var(--transition);
+            text-align: center;
+            font-family: inherit;
+        }
+
+        .nota-input:focus { border-color: var(--color-orange); }
+
+        .btn-archivo {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: transparent;
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-pill);
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--color-text-muted);
+            transition: background var(--transition);
+        }
+
+        .btn-archivo:hover { background: var(--color-bg-page); }
+        .btn-archivo i { font-size: 12px; }
+
+        /* ── Estado vacío de calificaciones ── */
+        .calif-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            gap: 10px;
+            color: var(--color-text-muted);
+        }
+
+        .calif-empty i { font-size: 40px; opacity: 0.3; }
+        .calif-empty p { font-size: 13px; text-align: center; }
+
+        /* ══════════════════════════════
+           ALUMNOS
+        ══════════════════════════════ */
+        .alumnos-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-card-bg);
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-pill);
+            padding: 7px 14px;
+            flex: 1;
+            max-width: 280px;
+        }
+
+        .search-box i { font-size: 15px; color: var(--color-text-muted); }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 13px;
+            color: var(--color-text-main);
+            background: transparent;
+            width: 100%;
+            font-family: inherit;
+        }
+
+        .search-box input::placeholder { color: var(--color-text-muted); }
+
+        .alumno-count {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* ══════════════════════════════
+           BOTONES GLOBALES
+        ══════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 16px;
+            border-radius: var(--radius-pill);
+            border: none;
+            cursor: pointer;
+            transition: background var(--transition), transform var(--transition);
+            line-height: 1;
+            font-family: inherit;
+        }
+
+        .btn:active { transform: scale(0.97); }
+
+        .btn--primary { background: var(--color-orange); color: #fff; }
+        .btn--primary:hover { background: var(--color-orange-dark); }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--color-text-muted);
+            border: 0.5px solid var(--color-border);
+        }
+
+        .btn--ghost:hover { background: var(--color-card-bg); color: var(--color-text-main); }
+        .btn i { font-size: 14px; }
+
+        /* ══════════════════════════════
+           MODAL NUEVA ACTIVIDAD
+        ══════════════════════════════ */
+        .modal {
+            border: none;
+            border-radius: 18px;
+            padding: 0;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: var(--shadow-modal);
+            background: var(--color-card-bg);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            margin: 0;
+        }
+
+        .modal::backdrop {
+            background: rgba(10, 20, 40, 0.55);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal__header {
+            background: var(--color-navy);
+            padding: 1.25rem 1.5rem;
+            border-radius: 18px 18px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal__title { font-size: 1rem; font-weight: 700; color: #fff; }
+        .modal__label { font-size: 11px; font-weight: 600; color: var(--color-orange); letter-spacing: 0.7px; text-transform: uppercase; margin-bottom: 2px; }
+
+        .modal__close {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 15px;
+            transition: background var(--transition);
+        }
+
+        .modal__close:hover { background: rgba(255,255,255,0.2); }
+
+        .modal__body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .form-input, .form-textarea {
+            border: 0.5px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 9px 12px;
+            font-size: 14px;
+            color: var(--color-text-main);
+            outline: none;
+            transition: border-color var(--transition);
+            font-family: inherit;
+            background: var(--color-card-bg);
+        }
+
+        .form-input:focus, .form-textarea:focus { border-color: var(--color-orange); }
+        .form-textarea { resize: vertical; min-height: 80px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        .modal__footer {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            border-top: 0.5px solid var(--color-border);
+            padding-top: 1rem;
+        }
+
+        /* ══════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════ */
+        @media (max-width: 768px) {
+            .content-area { margin-left: 0; padding: calc(var(--header-height) + 1rem) 1rem 1.5rem; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .tabs-wrap { overflow-x: auto; }
+            .modal { max-width: calc(100vw - 2rem); }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-row { grid-template-columns: 1fr; }
+            .actividad-right { flex-direction: column; align-items: flex-end; }
+        }
+    </style>
+</head>
+<body>
+
+<main class="content-area">
+
+    <!-- Barra de volver -->
+    <div class="topbar">
+        <button class="btn-back btn" type="button" onclick="history.back()">
+            <i class="ti ti-arrow-left" aria-hidden="true"></i> Volver a mis cursos
+        </button>
+    </div>
+
+    <!-- Panel principal -->
+    <div class="panel">
+
+        <!-- Tabs -->
+        <div class="tabs-wrap" role="tablist">
+            <button class="tab active" role="tab" aria-selected="true"
+                aria-controls="sec-tablon" onclick="cambiarTab(this, 'sec-tablon')">
+                <i class="ti ti-speakerphone" aria-hidden="true"></i> Tablón
+            </button>
+            <button class="tab" role="tab" aria-selected="false"
+                aria-controls="sec-trabajo" onclick="cambiarTab(this, 'sec-trabajo')">
+                <i class="ti ti-clipboard-list" aria-hidden="true"></i> Trabajo en clase
+            </button>
+            <button class="tab" role="tab" aria-selected="false"
+                aria-controls="sec-calificaciones" onclick="cambiarTab(this, 'sec-calificaciones')">
+                <i class="ti ti-chart-bar" aria-hidden="true"></i> Calificaciones
+            </button>
+            <button class="tab" role="tab" aria-selected="false"
+                aria-controls="sec-alumnos" onclick="cambiarTab(this, 'sec-alumnos')">
+                <i class="ti ti-users" aria-hidden="true"></i> Alumnos
+            </button>
+        </div>
+
+        <div class="panel-body">
+
+            <!-- ══════════════════
+                 TAB: TABLÓN
+            ══════════════════ -->
+            <section id="sec-tablon" class="section active" role="tabpanel">
+
+                <div class="anuncio-box">
+                    <textarea id="anuncio-input" placeholder="Escribe un aviso, recordatorio o mensaje para el grupo..."></textarea>
+                    <div class="anuncio-footer">
+                        <button class="btn btn--primary" type="button" onclick="publicarAviso()">
+                            <i class="ti ti-send" aria-hidden="true"></i> Publicar
+                        </button>
+                    </div>
+                </div>
+
+                <span class="section-label">Publicaciones recientes</span>
+
+                <div class="aviso-list" id="aviso-list">
+
+                    <div class="aviso-card">
+                        <div class="aviso-avatar">CP</div>
+                        <div>
+                            <span class="aviso-author">Carlos Pérez
+                                <span class="aviso-date">hace 2 horas</span>
+                            </span>
+                            <p class="aviso-text">Recuerden traer calculadora científica para el taller de mañana. El que no la tenga no podrá participar en la actividad práctica.</p>
+                        </div>
+                    </div>
+
+                    <div class="aviso-card">
+                        <div class="aviso-avatar">CP</div>
+                        <div>
+                            <span class="aviso-author">Carlos Pérez
+                                <span class="aviso-date">ayer</span>
+                            </span>
+                            <p class="aviso-text">El parcial del viernes queda pospuesto para el lunes. Aprovechen para repasar los temas de cinemática y dinámica.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══════════════════
+                 TAB: TRABAJO EN CLASE
+            ══════════════════ -->
+            <section id="sec-trabajo" class="section" role="tabpanel">
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-card__label">
+                            <i class="ti ti-clipboard-list" aria-hidden="true"></i> Actividades creadas
+                        </div>
+                        <div class="stat-card__value">4</div>
+                        <div class="stat-card__sub">en este periodo</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__label">
+                            <i class="ti ti-clock-exclamation" aria-hidden="true"></i> Por calificar
+                        </div>
+                        <div class="stat-card__value orange">24</div>
+                        <div class="stat-card__sub">entregas sin nota</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__label">
+                            <i class="ti ti-user-x" aria-hidden="true"></i> Sin entregar
+                        </div>
+                        <div class="stat-card__value">11</div>
+                        <div class="stat-card__sub">alumnos pendientes</div>
+                    </div>
+                </div>
+
+                <div class="section-head">
+                    <span class="section-label">Actividades del periodo</span>
+                    <button class="btn btn--primary" type="button" onclick="abrirModal('modal-actividad')">
+                        <i class="ti ti-plus" aria-hidden="true"></i> Nueva actividad
+                    </button>
+                </div>
+
+                <div class="actividades-list" id="actividades-list">
+
+                    <div class="actividad-card">
+                        <div class="actividad-left">
+                            <div class="actividad-icon">
+                                <i class="ti ti-file-text" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="actividad-name">Taller de Cinemática</div>
+                                <div class="actividad-meta">
+                                    <i class="ti ti-calendar" aria-hidden="true"></i> Vence 8 jun · 2025
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actividad-right">
+                            <span class="pill green">24 / 35 entregaron</span>
+                            <button class="btn btn--ghost" type="button"
+                                onclick="verEntregas('Taller de Cinemática')">
+                                Ver entregas
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-left">
+                            <div class="actividad-icon">
+                                <i class="ti ti-file-text" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="actividad-name">Evaluación Dinámica</div>
+                                <div class="actividad-meta">
+                                    <i class="ti ti-calendar" aria-hidden="true"></i> Vence 5 jun · 2025
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actividad-right">
+                            <span class="pill warn">12 / 35 entregaron</span>
+                            <button class="btn btn--ghost" type="button"
+                                onclick="verEntregas('Evaluación Dinámica')">
+                                Ver entregas
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-left">
+                            <div class="actividad-icon">
+                                <i class="ti ti-file-text" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="actividad-name">Quiz Leyes de Newton</div>
+                                <div class="actividad-meta">
+                                    <i class="ti ti-calendar" aria-hidden="true"></i> Vence 1 jun · 2025
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actividad-right">
+                            <span class="pill green">35 / 35 entregaron</span>
+                            <button class="btn btn--ghost" type="button"
+                                onclick="verEntregas('Quiz Leyes de Newton')">
+                                Ver entregas
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══════════════════
+                 TAB: CALIFICACIONES
+            ══════════════════ -->
+            <section id="sec-calificaciones" class="section" role="tabpanel">
+
+                <!-- Estado vacío: cuando no se ha seleccionado actividad -->
+                <div class="calif-empty" id="calif-empty">
+                    <i class="ti ti-table-off" aria-hidden="true"></i>
+                    <p>Selecciona una actividad desde<br><strong>Trabajo en clase → Ver entregas</strong><br>para ver la planilla de calificaciones.</p>
+                </div>
+
+                <!-- Planilla (oculta hasta que se seleccione actividad) -->
+                <div id="calif-planilla" style="display:none; flex-direction:column; gap:1.25rem;">
+
+                    <div class="calif-context">
+                        <div>
+                            <div class="actividad-name" id="calif-titulo">Taller de Cinemática</div>
+                            <div class="actividad-meta" id="calif-sub">
+                                <i class="ti ti-calendar" aria-hidden="true"></i> Vence 8 jun · 2025 · 35 estudiantes
+                            </div>
+                        </div>
+                        <button class="btn btn--ghost" type="button" onclick="cerrarPlanilla()">
+                            <i class="ti ti-x" aria-hidden="true"></i> Cerrar planilla
+                        </button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Estudiante</th>
+                                    <th>Documento</th>
+                                    <th>Estado</th>
+                                    <th>Archivo</th>
+                                    <th>Nota</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calif-tbody">
+                                <tr>
+                                    <td>1</td>
+                                    <td class="td-nombre">Sofía Martínez</td>
+                                    <td class="td-doc">1045892301</td>
+                                    <td><span class="estado-badge entregado"><i class="ti ti-check"></i> Entregado</span></td>
+                                    <td><button class="btn-archivo"><i class="ti ti-paperclip"></i> Ver archivo</button></td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—" value="8.5"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="td-nombre">Juan Camilo Torres</td>
+                                    <td class="td-doc">1045892302</td>
+                                    <td><span class="estado-badge entregado"><i class="ti ti-check"></i> Entregado</span></td>
+                                    <td><button class="btn-archivo"><i class="ti ti-paperclip"></i> Ver archivo</button></td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="td-nombre">Valentina Ríos</td>
+                                    <td class="td-doc">1045892303</td>
+                                    <td><span class="estado-badge retrasado"><i class="ti ti-clock"></i> Retrasado</span></td>
+                                    <td><button class="btn-archivo"><i class="ti ti-paperclip"></i> Ver archivo</button></td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="td-nombre">Sebastián Gómez</td>
+                                    <td class="td-doc">1045892304</td>
+                                    <td><span class="estado-badge pendiente"><i class="ti ti-x"></i> Sin entregar</span></td>
+                                    <td>—</td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="td-nombre">Isabella Herrera</td>
+                                    <td class="td-doc">1045892305</td>
+                                    <td><span class="estado-badge entregado"><i class="ti ti-check"></i> Entregado</span></td>
+                                    <td><button class="btn-archivo"><i class="ti ti-paperclip"></i> Ver archivo</button></td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—" value="9.0"></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="td-nombre">Mateo Vargas</td>
+                                    <td class="td-doc">1045892306</td>
+                                    <td><span class="estado-badge pendiente"><i class="ti ti-x"></i> Sin entregar</span></td>
+                                    <td>—</td>
+                                    <td><input class="nota-input" type="number" min="0" max="10" placeholder="—"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="display:flex; justify-content:flex-end;">
+                        <button class="btn btn--primary" type="button">
+                            <i class="ti ti-device-floppy" aria-hidden="true"></i> Guardar calificaciones
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══════════════════
+                 TAB: ALUMNOS
+            ══════════════════ -->
+            <section id="sec-alumnos" class="section" role="tabpanel">
+
+                <div class="alumnos-head">
+                    <div class="search-box">
+                        <i class="ti ti-search" aria-hidden="true"></i>
+                        <input type="text" id="search-alumno"
+                            placeholder="Buscar por nombre o documento..."
+                            oninput="filtrarAlumnos(this.value)">
+                    </div>
+                    <span class="alumno-count" id="alumno-count">35 estudiantes</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre completo</th>
+                                <th>Documento</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alumnos-tbody">
+                            <tr data-nombre="Sofía Martínez" data-doc="1045892301">
+                                <td>1</td>
+                                <td class="td-nombre">Sofía Martínez</td>
+                                <td class="td-doc">1045892301</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Juan Camilo Torres" data-doc="1045892302">
+                                <td>2</td>
+                                <td class="td-nombre">Juan Camilo Torres</td>
+                                <td class="td-doc">1045892302</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Valentina Ríos" data-doc="1045892303">
+                                <td>3</td>
+                                <td class="td-nombre">Valentina Ríos</td>
+                                <td class="td-doc">1045892303</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Sebastián Gómez" data-doc="1045892304">
+                                <td>4</td>
+                                <td class="td-nombre">Sebastián Gómez</td>
+                                <td class="td-doc">1045892304</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Isabella Herrera" data-doc="1045892305">
+                                <td>5</td>
+                                <td class="td-nombre">Isabella Herrera</td>
+                                <td class="td-doc">1045892305</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Mateo Vargas" data-doc="1045892306">
+                                <td>6</td>
+                                <td class="td-nombre">Mateo Vargas</td>
+                                <td class="td-doc">1045892306</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Camila Ospina" data-doc="1045892307">
+                                <td>7</td>
+                                <td class="td-nombre">Camila Ospina</td>
+                                <td class="td-doc">1045892307</td>
+                                <td><span class="estado-badge entregado">Activo</span></td>
+                            </tr>
+                            <tr data-nombre="Andrés Felipe Mora" data-doc="1045892308">
+                                <td>8</td>
+                                <td class="td-nombre">Andrés Felipe Mora</td>
+                                <td class="td-doc">1045892308</td>
+                                <td><span class="estado-badge retrasado">Inactivo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div><!-- /panel-body -->
+    </div><!-- /panel -->
+
+</main>
+
+<!-- ══════════════════════════════
+     MODAL: NUEVA ACTIVIDAD
+══════════════════════════════ -->
+<dialog id="modal-actividad" class="modal" aria-labelledby="modal-act-title">
+    <div class="modal__header">
+        <div>
+            <div class="modal__label">Trabajo en clase</div>
+            <h2 class="modal__title" id="modal-act-title">Nueva actividad</h2>
+        </div>
+        <button class="modal__close" type="button"
+            onclick="cerrarModal('modal-actividad')" aria-label="Cerrar">
+            <i class="ti ti-x" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="modal__body">
+        <div class="form-group">
+            <label class="form-label" for="act-nombre">Nombre de la actividad</label>
+            <input class="form-input" id="act-nombre" type="text"
+                placeholder="Ej: Taller de Cinemática">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="act-descripcion">Descripción</label>
+            <textarea class="form-textarea" id="act-descripcion"
+                placeholder="Instrucciones o descripción de la actividad..."></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label" for="act-fecha">Fecha límite</label>
+                <input class="form-input" id="act-fecha" type="date">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="act-valor">Valor (puntos)</label>
+                <input class="form-input" id="act-valor" type="number"
+                    min="0" max="10" placeholder="Ej: 5.0">
+            </div>
+        </div>
+    </div>
+    <div class="modal__footer">
+        <button class="btn btn--ghost" type="button"
+            onclick="cerrarModal('modal-actividad')">Cancelar</button>
+        <button class="btn btn--primary" type="button" onclick="guardarActividad()">
+            <i class="ti ti-check" aria-hidden="true"></i> Crear actividad
+        </button>
+    </div>
+</dialog>
+
+<script>
+    /* ── Cambio de tabs ── */
+    function cambiarTab(tabEl, seccionId) {
+        document.querySelectorAll('.tab').forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+        tabEl.classList.add('active');
+        tabEl.setAttribute('aria-selected', 'true');
+        document.getElementById(seccionId).classList.add('active');
+    }
+
+    /* ── Tablón: publicar aviso ── */
+    function publicarAviso() {
+        const input = document.getElementById('anuncio-input');
+        const texto = input.value.trim();
+        if (!texto) return;
+
+        const lista = document.getElementById('aviso-list');
+        const card = document.createElement('div');
+        card.className = 'aviso-card';
+        card.innerHTML = `
+            <div class="aviso-avatar">CP</div>
+            <div>
+                <span class="aviso-author">Carlos Pérez
+                    <span class="aviso-date">ahora mismo</span>
+                </span>
+                <p class="aviso-text">${texto}</p>
+            </div>`;
+        lista.insertBefore(card, lista.firstChild);
+        input.value = '';
+    }
+
+    /* ── Trabajo en clase: abrir planilla de calificaciones ── */
+    function verEntregas(nombreActividad) {
+        // Cambiar a la tab de calificaciones
+        const tabCalif = document.querySelector('[aria-controls="sec-calificaciones"]');
+        cambiarTab(tabCalif, 'sec-calificaciones');
+
+        // Mostrar planilla y ocultar estado vacío
+        document.getElementById('calif-empty').style.display = 'none';
+        const planilla = document.getElementById('calif-planilla');
+        planilla.style.display = 'flex';
+
+        // Actualizar título
+        document.getElementById('calif-titulo').textContent = nombreActividad;
+    }
+
+    /* ── Calificaciones: cerrar planilla ── */
+    function cerrarPlanilla() {
+        document.getElementById('calif-planilla').style.display = 'none';
+        document.getElementById('calif-empty').style.display = 'flex';
+    }
+
+    /* ── Modal nueva actividad ── */
+    function abrirModal(id) {
+        document.getElementById(id).showModal();
+    }
+
+    function cerrarModal(id) {
+        document.getElementById(id).close();
+    }
+
+    function guardarActividad() {
+        const nombre = document.getElementById('act-nombre').value.trim();
+        const fecha  = document.getElementById('act-fecha').value;
+        if (!nombre) { alert('El nombre de la actividad es obligatorio.'); return; }
+
+        const lista = document.getElementById('actividades-list');
+        const fechaTexto = fecha
+            ? new Date(fecha + 'T00:00:00').toLocaleDateString('es-CO', { day: 'numeric', month: 'short', year: 'numeric' })
+            : 'Sin fecha límite';
+
+        const card = document.createElement('div');
+        card.className = 'actividad-card';
+        card.innerHTML = `
+            <div class="actividad-left">
+                <div class="actividad-icon"><i class="ti ti-file-text" aria-hidden="true"></i></div>
+                <div>
+                    <div class="actividad-name">${nombre}</div>
+                    <div class="actividad-meta">
+                        <i class="ti ti-calendar" aria-hidden="true"></i> Vence ${fechaTexto}
+                    </div>
+                </div>
+            </div>
+            <div class="actividad-right">
+                <span class="pill warn">0 / 35 entregaron</span>
+                <button class="btn btn--ghost" type="button"
+                    onclick="verEntregas('${nombre}')">Ver entregas</button>
+            </div>`;
+        lista.appendChild(card);
+
+        cerrarModal('modal-actividad');
+        document.getElementById('act-nombre').value = '';
+        document.getElementById('act-descripcion').value = '';
+        document.getElementById('act-fecha').value = '';
+        document.getElementById('act-valor').value = '';
+    }
+
+    /* ── Alumnos: buscador ── */
+    function filtrarAlumnos(query) {
+        const q = query.toLowerCase();
+        const filas = document.querySelectorAll('#alumnos-tbody tr');
+        let visibles = 0;
+        filas.forEach(fila => {
+            const nombre = fila.dataset.nombre.toLowerCase();
+            const doc    = fila.dataset.doc.toLowerCase();
+            const coincide = nombre.includes(q) || doc.includes(q);
+            fila.style.display = coincide ? '' : 'none';
+            if (coincide) visibles++;
+        });
+        document.getElementById('alumno-count').textContent =
+            `${visibles} estudiante${visibles !== 1 ? 's' : ''}`;
+    }
+
+    /* ── Cerrar modal al hacer clic en el backdrop ── */
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', e => {
+            if (e.target === modal) modal.close();
+        });
+    });
+</script>
+
+</body>
+</html>
